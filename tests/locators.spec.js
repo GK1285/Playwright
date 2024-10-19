@@ -5,7 +5,7 @@ await page.locator('id=login2').click()
 await page.locator('#loginusername').fill("pavanol")
 await page.locator('id=loginpassword').fill("test@123")
 await page.locator("//button[normalize-space()='Log in']").click()
-//Verify logout link presence
+
 const logoutlink= await page.locator("//a[normalize-space()='Log out']")
 await expect(logoutlink).toBeVisible();
 await page.close()
