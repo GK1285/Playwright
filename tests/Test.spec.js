@@ -5,5 +5,6 @@ await page.goto('https://www.demoblaze.com/index.html');
   await expect(page).toHaveTitle('STORE');
  const pageURL=page.url();
   await expect(page).toHaveURL('https://www.demoblaze.com/index.html');
- await page.close();
+
+  await page.close();
 })
