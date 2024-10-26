@@ -1,0 +1,30 @@
+name:Demo to create automatic PR
+
+On:
+  push:
+   branches:
+      -main
+
+jobs:
+  updateAuthor:
+    runs-on:ubuntu-latest
+
+    Steps:
+      - name: checking out coe    
+        uses: actions/checkout@v2
+
+      - name: extract git commit data
+        uses: Playwright/git-commit-data-action@v1.x
+
+      - name: Raise pr
+        uses: goutham/create pull request@v3
+        with
+          branch: "auto-pr-branch"
+          base: main
+          title: "demo for auto pr"
+          committer: ${{env.GIT_COMMIT_AUTHOR_NAME}} <${{env.GIT_COMMIT_AUTHOR_EMAIL}}
+          author: ${{env.GIT_COMMIT_AUTHOR_NAME}} <${{env.GIT_COMMIT_AUTHOR_EMAIL}}
+          body:
+            This is to show automatic PR creation
+          token: ${{secrets.GITHUB_TOkEN}}
+          delete-branch: true
