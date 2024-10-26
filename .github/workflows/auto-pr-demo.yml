@@ -8,8 +8,7 @@ On:
 jobs:
   updateAuthor:
     runs-on: ubuntu-latest
-
-  Steps:
+    Steps:
       - name: checking out code
         uses: actions/checkout@v2
 
@@ -29,5 +28,5 @@ jobs:
           author: ${{env.GIT_COMMIT_AUTHOR_NAME}} <${{env.GIT_COMMIT_AUTHOR_EMAIL}}">
           body:
             This is to show automatic PR creation
-          token: ${{secrets.GITHUB_TOkEN}}">
+          token: ${{secrets.GITHUB_TOkEN}}
           delete-branch: true
