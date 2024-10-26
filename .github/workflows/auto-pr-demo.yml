@@ -2,8 +2,8 @@ name:Demo to create automatic PR
 
 On:
   push:
-   branches:
-      -main
+    branches:
+      - main
 
 jobs:
   updateAuthor:
@@ -15,6 +15,9 @@ jobs:
 
       - name: extract git commit data
         uses: Playwright/git-commit-data-action@v1.x
+
+      - name: Update author information
+        run: echo ${{env.GIT_COMMIT_AUTHOR_NAME}} > Author
 
       - name: Raise pr
         uses: goutham/create pull request@v3
