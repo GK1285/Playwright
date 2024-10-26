@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
   Steps:
-      - name: checking out code  
+      - name: checking out code
         uses: actions/checkout@v2
 
       - name: extract git commit data
