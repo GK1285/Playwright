@@ -10,8 +10,7 @@ on:
 
     jobs:
       tests:
-       runs-on: windows-latest
-
+       runs-on: latest
        steps:
         - name: Hello Step
           run: echo "Hello World"
