@@ -6,6 +6,7 @@ for (const link of links)
 {
   const linktext= await link.textContent();
   console.log (linktext);
+  
 }
 
 })
