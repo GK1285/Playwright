@@ -9,7 +9,7 @@ await page.close();
 const logoelement=await page.locator('.header-logo')
 await expect(logoelement).toBeVisible()
 //search store box to be enabled.
-const searchStoreBox=await page.locator('#small-searchterms').fill('Goutham')
+const searchStoreBox=await page.locator('#small-searchterms').click()
 // radio button to be checked.
 const maleRadioButton=await page.locator('#gender-male')
 await maleRadioButton.click()
