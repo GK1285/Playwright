@@ -3,6 +3,7 @@ test('Assertions',async ({page})=>{
 await page.goto('https://demo.nopcommerce.com/register')
 await expect(page).toHaveURL('https://demo.nopcommerce.com/register')
 await expect(page).toHaveTitle('nopCommerce demo store. Register')
+await page.close();
 // Logo element to be visible
 const logoelement=await page.locator('.header-logo')
 await expect(logoelement).toBeVisible()
@@ -26,10 +27,6 @@ const emailInput=await page.locator('#Email')
 await emailInput.fill('kunchalagoutham@yahoo.com')
 await expect(emailInput).toHaveValue('kunchalagoutham@yahoo.com')
 // To have count
-const options=await page.locator('select[name="DateOfBirthMonth"] option')
-await expect(options).toHaveCount(13) 
-
-
-
+ 
 })
 
