@@ -1,13 +1,14 @@
 const {test, expect}=require('@playwright/test')
+const { before } = require('node:test')
 test('Assertions',async ({page})=>{
 await page.goto('https://demo.nopcommerce.com/register')
 await expect(page).toHaveURL('https://demo.nopcommerce.com/register')
-await expect(page).toHaveTitle('nopCommerce demo store. Register')
+await expect(page).toHaveTitle('nopCommerce demo store. Register') 
 // Logo element to be visible
 const logoelement=await page.locator('.header-logo')
 await expect(logoelement).toBeVisible()
 //search store box to be enabled.
-const searchStoreBox=await page.locator('#small-searchterms').fill('Goutham')
+const searchStoreBox=await page.locator('#small-searchterms').click('Goutham')
 // radio button to be checked.
 const maleRadioButton=await page.locator('#gender-male')
 await maleRadioButton.click()
