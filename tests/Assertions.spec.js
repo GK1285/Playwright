@@ -3,21 +3,13 @@ const { before } = require('node:test')
 test('Assertions',async ({page})=>{
 await page.goto('https://demo.nopcommerce.com/register')
 await expect(page).toHaveURL('https://demo.nopcommerce.com/register')
-<<<<<<< HEAD
-await expect(page).toHaveTitle('nopCommerce demo store. Register') 
-=======
 await expect(page).toHaveTitle('nopCommerce demo store. Register')
 await page.close();
->>>>>>> asert
 // Logo element to be visible
 const logoelement=await page.locator('.header-logo')
 await expect(logoelement).toBeVisible()
 //search store box to be enabled.
-<<<<<<< HEAD
-const searchStoreBox=await page.locator('#small-searchterms').click('Goutham')
-=======
-const searchStoreBox=await page.locator('#small-searchterms')
->>>>>>> asert
+const searchStoreBox=await page.locator('#small-searchterms').fill('Goutham')
 // radio button to be checked.
 const maleRadioButton=await page.locator('#gender-male')
 await maleRadioButton.click()
