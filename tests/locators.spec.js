@@ -8,5 +8,4 @@ await page.locator("//button[normalize-space()='Log in']").click()
 const logoutlink= await page.locator("//a[normalize-space()='Log out']")
 await expect(logoutlink).toBeVisible();
 await page.close();
-
 })
